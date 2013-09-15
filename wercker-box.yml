@@ -1,5 +1,5 @@
 name : nodebox
-version : 0.0.4
+version : 0.0.5
 inherits : wercker/ubuntu12.04-webessentials@0.0.11
 type : main
 platform : ubuntu@12.04
@@ -10,7 +10,7 @@ keywords:
 script: |
   export NODEVERSION=0.10.18
   sudo apt-get update
-  sudo apt-get install wget build-essential jscoverage
+  sudo apt-get install wget build-essential
   cd $HOME
   mkdir nodeinstall
   cd nodeinstall
@@ -21,5 +21,12 @@ script: |
   make
   sudo make install
   cd $HOME
-  rm -fr nodeinstall
+  rm -rf nodeinstall
   node -v
+  git clone git://github.com/visionmedia/node-jscoverage
+  cd node-jscoverage
+  ./configure
+  make
+  sudo make install
+  cd $HOME
+  rm -rf node-jscoverage
