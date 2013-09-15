@@ -10,7 +10,7 @@ keywords:
 script: |
   export NODEVERSION=0.10.18
   sudo apt-get update
-  sudo apt-get install wget build-essential
+  sudo apt-get install wget build-essential jscoverage
   cd $HOME
   mkdir nodeinstall
   cd nodeinstall
