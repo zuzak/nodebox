@@ -1,14 +1,14 @@
-name : ubuntu12.04-nodejs0.10
+name : nodebox
 version : 0.0.4
 inherits : wercker/ubuntu12.04-webessentials@0.0.11
 type : main
 platform : ubuntu@12.04
 packages :
-  - nodejs@0.10.16
+  - nodejs@0.10.18
 keywords:
   - nodejs
 script: |
-  export NODEVERSION=0.10.16
+  export NODEVERSION=0.10.18
   sudo apt-get update
   sudo apt-get install wget build-essential
   cd $HOME
